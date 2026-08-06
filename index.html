@@ -3,104 +3,554 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./Style/Style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    <meta
+      name="description"
+      content="Pedro Costa Widholzer — Desenvolvedor Full Stack. Java, Spring Boot, Go e Angular. Portfólio de projetos e experiência."
     />
-    <title>Portfólio | Pedro Widholzer</title>
+    <link rel="stylesheet" href="./Style/Style.css" />
+    <title>Pedro Widholzer | Desenvolvedor Full Stack</title>
   </head>
   <body>
+    <header class="topbar">
+      <a href="#inicio" class="marca">Pedro Widholzer</a>
+      <nav class="nav">
+        <a href="#projetos">Projetos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#skills">Skills</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
     <main>
+      <!-- ===== HERO ===== -->
       <section id="inicio" class="hero">
         <img src="./image/fotoDePerfil.jpg" alt="Foto de perfil" class="foto" />
         <div class="texto">
           <h2>Olá, eu sou Pedro</h2>
           <h1>Desenvolvedor Full Stack</h1>
+          <p class="subtitulo">Java · Spring Boot · Go · Angular</p>
           <p>
-            Estudante de Engenharia de Software na PUCRS, com foco em sistemas
-            de gestão hospitalar. Experiência com Java, C#, React, Node.js,
-            Spring Boot, .NET, SQL e MongoDB. Apaixonado por resolver problemas
-            e criar soluções inovadoras.
+            Desenvolvedor full stack na PROCEMPA, trabalhando com Java e Spring
+            Boot em arquitetura de microsserviços e Angular com TypeScript no
+            frontend. Pela AGES/PUCRS entreguei dois projetos para clientes
+            reais, um deles hoje rodando em vários hospitais. Por conta própria
+            desenvolvi o SCT-PAV, do backend em Go à infraestrutura em AWS.
           </p>
-        </div>
-      </section>
-
-      <section id="experiencia" class="experiencia">
-        <h2>Experiência Profissional</h2>
-        <div class="jobs">
-          <div class="job">
-            <h3>Auxiliar de Laboratório | PUCRS Labelo</h3>
-            <span class="periodo">Ago/2024 – Ago/2025</span>
-            <p>
-              Operação de goniofotômetro, suporte a atividades administrativas e
-              desenvolvimento conjunto de um sistema para controle e manuseio de
-              estoque.
-            </p>
-          </div>
-
-          <div class="job">
-            <h3>Estagiário | Borderless</h3>
-            <span class="periodo">Fev/2024 – Mar/2024</span>
-            <p>
-              Desenvolvimento de sites e aplicativos, atuando como desenvolvedor
-              estagiário em projetos web e mobile, com foco em boas práticas e
-              design responsivo.
-            </p>
-          </div>
-
-          <div class="job">
-            <h3>Analista de Help Desk | HW Center</h3>
-            <span class="periodo">Mai/2021 – Fev/2024</span>
-            <p>
-              Suporte técnico e administrativo, manutenção de computadores,
-              gerenciamento de software de gestão de parque instalado e
-              aplicação de treinamentos sobre o sistema de gestão interna.
-            </p>
+          <div class="hero-acoes">
+            <a href="#projetos" class="btn btn-primario">Ver projetos</a>
+            <a
+              href="https://github.com/widholzerr"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-secundario"
+            >
+              <svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 2.5-.34c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.05 10.05 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg> GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/pedro-costa-widholzer-0b4b90242"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-secundario"
+            >
+              <svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.73v20.54C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .78 23.2 0 22.22 0z"/></svg> LinkedIn
+            </a>
           </div>
         </div>
       </section>
 
+      <!-- ===== PROJETOS ===== -->
       <section id="projetos" class="projetos">
-        <h2>Projetos em Destaque</h2>
+        <h2 data-reveal>Projetos</h2>
         <div class="cards">
-          <div class="card">
-            <h3>Projeto Pró-Mata</h3>
-            <p>Sistema desenvolvido para Pró-Mata PUCRS, durante minha cadeira da AGES.</p>
-            <a href="https://github.com/AGES-Pro-Mata" target="_blank">Ver no GitHub</a>
+          <!-- NITRA -->
+          <article class="card" data-reveal>
+            <!-- TODO: adicionar screenshot/GIF aqui quando tiver -->
+            <div class="card-topo">
+              <h3>NITRA — módulo de nutrição do NoHarm</h3>
+              <span class="badge badge-destaque">Em produção</span>
+            </div>
+            <p class="card-contexto">AGES/PUCRS · open source · time</p>
+            <p class="card-problema">
+              Prescrições de nutrição parenteral e enteral em ambiente hospitalar
+              precisam ser conferidas manualmente, e um erro tem consequência
+              clínica direta.
+            </p>
+            <p>
+              Módulo de nutrição do NoHarm, projeto open source de apoio à
+              segurança do paciente, <strong>hoje em uso em vários
+              hospitais</strong>. Atuei como desenvolvedor de funcionalidades,
+              com código entregue em produção e revisado pela comunidade do
+              projeto.
+            </p>
+            <ul class="stack">
+              <li>Python</li>
+              <li>Flask</li>
+              <li>React</li>
+              <li>PostgreSQL</li>
+            </ul>
+            <!-- TODO: link do repositório do NoHarm / site do projeto -->
+          </article>
+
+          <!-- SCT-PAV -->
+          <article class="card" data-reveal>
+            <!-- TODO: adicionar screenshot/GIF da interface — é o que mais converte -->
+            <div class="card-topo">
+              <h3>SCT-PAV — plataforma de inspeção de pavimento</h3>
+              <span class="badge">Projeto solo</span>
+            </div>
+            <p class="card-contexto">
+              Autoral · 4 meses · em homologação com cliente piloto
+            </p>
+            <p class="card-problema">
+              Inspetores registravam vistorias de pavimento em papel em campo e
+              redigitavam tudo no escritório — retrabalho e perda de dados entre
+              as duas etapas.
+            </p>
+            <p>
+              Plataforma completa de inspeção de pavimento urbano, desenvolvida
+              <strong>sozinho, do código à infraestrutura</strong>: app mobile
+              para o registro em campo, backend em Go e painel web para
+              acompanhamento.
+            </p>
+            <ul class="stack">
+              <li>Go</li>
+              <li>go-spring</li>
+              <li>React Native / Expo</li>
+              <li>Angular</li>
+              <li>Docker</li>
+              <li>GitHub Actions</li>
+              <li>AWS</li>
+              <li>Prometheus</li>
+              <li>Grafana</li>
+            </ul>
+            <p class="card-decisao">
+              <strong>Decisão técnica:</strong> escolhi Go pelo binário único e
+              baixo consumo de memória — o deploy roda numa instância pequena na
+              AWS sem runtime extra. Prometheus e Grafana entraram desde o início
+              porque, sendo o único desenvolvedor, precisava enxergar problema em
+              produção sem depender de alguém me avisar.
+            </p>
+            <!-- TODO: link de demo, vídeo ou repositório -->
+          </article>
+
+          <!-- PRÓ-MATA -->
+          <article class="card" data-reveal>
+            <!-- TODO: adicionar screenshot/GIF aqui quando tiver -->
+            <div class="card-topo">
+              <h3>Pró-Mata — plataforma de reservas</h3>
+              <span class="badge badge-destaque">Destaque do semestre</span>
+            </div>
+            <p class="card-contexto">AGES/PUCRS · time · full stack</p>
+            <p class="card-problema">
+              O Centro de Pesquisas Pró-Mata da PUCRS controlava reservas de
+              acomodações e experiências fora de um sistema próprio, sem
+              visibilidade do status das solicitações.
+            </p>
+            <p>
+              Plataforma web responsiva para gestão de reservas, escolhida
+              <strong>projeto destaque do semestre</strong>. Atuei como
+              desenvolvedor full stack no fluxo completo de reserva de
+              experiências e no dashboard administrativo — gestão de
+              solicitações, acompanhamento de status e métricas.
+            </p>
+            <ul class="stack">
+              <li>AWS</li>
+            </ul>
+            <a
+              href="https://github.com/AGES-Pro-Mata"
+              target="_blank"
+              rel="noopener"
+              >Ver no GitHub <svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 12h15"/><path d="m12.5 5 7 7-7 7"/></svg>></a>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== SOBRE ===== -->
+      <section id="sobre" class="sobre">
+        <h2 data-reveal>Sobre</h2>
+        <div class="sobre-grid">
+          <div class="sobre-bio" data-reveal>
+            <p class="lead">
+              Sou desenvolvedor full stack em Porto Alegre, cursando Engenharia
+              de Software na PUCRS.
+            </p>
+            <p>
+              Hoje trabalho na PROCEMPA, a companhia de processamento de dados do
+              município, com Java e Spring Boot em microsserviços que estão em
+              produção atendendo serviços da cidade — e com Angular do outro
+              lado da API.
+            </p>
+            <p>
+              Cheguei ao desenvolvimento pelo suporte: passei quase três anos em
+              helpdesk, onde fui responsável pela implementação, gestão e
+              treinamento do sistema interno da empresa. Foi ali que aprendi a
+              traduzir problema técnico para quem não é técnico — algo que uso
+              todo dia, seja levantando requisito ou reproduzindo bug de
+              produção.
+            </p>
+            <p>
+              Tenho interesse em design e arquitetura de sistemas, e gosto
+              especialmente de projetos onde consigo acompanhar a decisão do
+              início ao deploy. Foi o que me levou a construir o SCT-PAV
+              sozinho, do backend em Go até a observabilidade em produção.
+            </p>
+
+            <div class="destaques">
+              <div class="destaque">
+                <span class="destaque-num">3</span>
+                <span class="destaque-label">projetos entregues<br />para clientes reais</span>
+              </div>
+              <div class="destaque">
+                <span class="destaque-num">v16 → v19</span>
+                <span class="destaque-label">migração de Angular<br />conduzida por mim</span>
+              </div>
+              <div class="destaque">
+                <span class="destaque-num">Solo</span>
+                <span class="destaque-label">SCT-PAV, do backend<br />em Go ao deploy</span>
+              </div>
+            </div>
           </div>
-          <div class="card">
-            <h3>Contador de Emojis</h3>
-            <p>Aplicativo divertido feito em Java.</p>
-            <a href="https://github.com/widholzerr/Contador-de-emojis" target="_blank">Ver no GitHub</a>
+
+          <aside class="sobre-painel" data-reveal>
+            <div class="painel-bloco">
+              <h3><svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3.5 2.2 8.5 2.2 12 0v-5"/></svg> Formação</h3>
+              <p class="painel-titulo">Bacharelado em Engenharia de Software</p>
+              <p class="painel-sub">PUCRS · ago/2023 – jul/2028 (cursando)</p>
+            </div>
+
+            <div class="painel-bloco">
+              <h3><svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8.5" r="5.5"/><path d="M8.2 13.6 7 22l5-2.8 5 2.8-1.2-8.4"/></svg> Certificações</h3>
+              <p class="painel-sub">Fundação Bradesco · 2024</p>
+              <ul class="painel-lista">
+                <li>Linguagens de Programação — Python</li>
+                <li>Desenvolvimento Orientado a Objetos com Python</li>
+                <li>Projeto com Interface Gráfica em Python</li>
+              </ul>
+            </div>
+
+            <div class="painel-bloco">
+              <h3><svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M12 2.5a15 15 0 0 1 4 9.5 15 15 0 0 1-4 9.5 15 15 0 0 1-4-9.5 15 15 0 0 1 4-9.5z"/></svg> Idiomas</h3>
+              <ul class="idiomas">
+                <li>
+                  <span>Português</span>
+                  <span class="nivel" data-nivel="4">Nativo</span>
+                </li>
+                <li>
+                  <span>Inglês</span>
+                  <span class="nivel" data-nivel="3">Intermediário</span>
+                </li>
+                <li>
+                  <span>Libras</span>
+                  <span class="nivel" data-nivel="3">Intermediário</span>
+                </li>
+                <li>
+                  <span>Espanhol</span>
+                  <span class="nivel" data-nivel="1">Básico</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="painel-bloco">
+              <h3><svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10.5c0 5.8-8 11.5-8 11.5s-8-5.7-8-11.5a8 8 0 0 1 16 0z"/><circle cx="12" cy="10.3" r="2.9"/></svg> Onde e como</h3>
+              <p class="painel-sub">Porto Alegre, RS — Brasil</p>
+              <p class="painel-sub">Remoto, híbrido ou presencial</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ===== EXPERIÊNCIA ===== -->
+      <section id="experiencia" class="experiencia">
+        <h2 data-reveal>Experiência</h2>
+        <ol class="timeline">
+          <li class="tl-item" data-reveal>
+            <span class="tl-marcador tl-marcador-ativo" aria-hidden="true"></span>
+            <div class="tl-conteudo">
+              <span class="tl-periodo">Fev/2026 – atual</span>
+              <div class="tl-topo">
+                <h3>Desenvolvedor Full Stack</h3>
+                <span class="badge badge-atual">Atual</span>
+              </div>
+              <span class="tl-empresa">PROCEMPA · Porto Alegre · Híbrido</span>
+              <p>
+                Serviços em Java com Spring Boot em arquitetura de
+                microsserviços, criando e consumindo APIs REST entre sistemas em
+                produção, com PostgreSQL via Spring JPA. No frontend, telas e
+                componentes em Angular com TypeScript.
+              </p>
+              <ul>
+                <li>
+                  Conduzi a atualização do Angular da <strong>v16 para a
+                  v19</strong>, com refatoração de componentes
+                </li>
+                <li>
+                  Investigação e correção de bugs em produção, da reprodução à
+                  validação
+                </li>
+                <li>
+                  Configurei a padronização de código do projeto (Husky, ESLint,
+                  Prettier)
+                </li>
+                <li>
+                  Testes com JUnit e Jest · code review · Docker e esteiras de
+                  CI/CD
+                </li>
+              </ul>
+              <ul class="stack">
+                <li>Java</li>
+                <li>Spring Boot</li>
+                <li>Angular</li>
+                <li>TypeScript</li>
+                <li>PostgreSQL</li>
+                <li>Docker</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="tl-item" data-reveal>
+            <span class="tl-marcador" aria-hidden="true"></span>
+            <div class="tl-conteudo">
+              <span class="tl-periodo">Jul/2024 – Ago/2025</span>
+              <div class="tl-topo">
+                <h3>Assistente de Laboratório</h3>
+                <span class="badge">Progressão</span>
+              </div>
+              <span class="tl-empresa">PUCRS — Labelo · Porto Alegre</span>
+              <p>
+                Participei do desenvolvimento de um sistema interno de controle
+                de estoque, do levantamento da necessidade à implementação.
+                Entrei como estagiário operando goniofotômetro e progredi a
+                assistente em tempo integral.
+              </p>
+            </div>
+          </li>
+
+          <li class="tl-item" data-reveal>
+            <span class="tl-marcador" aria-hidden="true"></span>
+            <div class="tl-conteudo">
+              <span class="tl-periodo">Mai/2021 – Fev/2024</span>
+              <div class="tl-topo">
+                <h3>Analista de Helpdesk de TI</h3>
+                <span class="badge">Promoção interna</span>
+              </div>
+              <span class="tl-empresa">HW Center · Porto Alegre</span>
+              <p>
+                Responsável pela implementação, gestão e treinamento do sistema
+                interno da empresa junto à equipe e aos clientes, além da gestão
+                dos parques tecnológicos cadastrados. Analisava relatórios de
+                visita, qualificação térmica e certificados de calibração.
+              </p>
+              <p class="tl-nota">
+                Quase três anos e uma promoção — de Helpdesk a Analista, em
+                nov/2022.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ===== SKILLS ===== -->
+      <section id="skills" class="skills">
+        <h2 data-reveal>Competências Técnicas</h2>
+        <div class="skills-painel" data-reveal>
+          <div class="skill-linha">
+            <div class="skill-rotulo">
+              <span class="ico-box"><svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+              <span>Linguagens</span>
+            </div>
+            <ul class="stack">
+              <li class="tag-forte">Java</li>
+              <li class="tag-forte">Go</li>
+              <li class="tag-forte">TypeScript</li>
+              <li>JavaScript</li>
+              <li>Python</li>
+              <li>SQL</li>
+            </ul>
           </div>
-          <div class="card">
-            <h3>Sinta-se Livre</h3>
-            <p>Página de apresentação de um site para apoio psicológico.</p>
-            <a href="https://sinta-selivre.netlify.app" target="_blank">Ver no site</a>
+
+          <div class="skill-linha">
+            <div class="skill-rotulo">
+              <span class="ico-box"><svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01"/><path d="M6 17.5h.01"/></svg></span>
+              <span>Backend</span>
+            </div>
+            <ul class="stack">
+              <li class="tag-forte">Spring Boot</li>
+              <li>Spring JPA / Hibernate</li>
+              <li>go-spring</li>
+              <li>Node.js</li>
+              <li>APIs REST</li>
+              <li>Microsserviços</li>
+            </ul>
+          </div>
+
+          <div class="skill-linha">
+            <div class="skill-rotulo">
+              <span class="ico-box"><svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 16v5"/></svg></span>
+              <span>Frontend</span>
+            </div>
+            <ul class="stack">
+              <li class="tag-forte">Angular</li>
+              <li>React</li>
+              <li>React Native</li>
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>Tailwind CSS</li>
+              <li>Design responsivo</li>
+            </ul>
+          </div>
+
+          <div class="skill-linha">
+            <div class="skill-rotulo">
+              <span class="ico-box"><svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span>
+              <span>Dados</span>
+            </div>
+            <ul class="stack">
+              <li class="tag-forte">PostgreSQL</li>
+              <li>Oracle</li>
+              <li>MongoDB</li>
+              <li>Modelagem relacional</li>
+            </ul>
+          </div>
+
+          <div class="skill-linha">
+            <div class="skill-rotulo">
+              <span class="ico-box"><svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.98 6 6 0 0 0-11.66-1.5A4 4 0 0 0 6.5 19h11z"/></svg></span>
+              <span>Infra e DevOps</span>
+            </div>
+            <ul class="stack">
+              <li class="tag-forte">Docker</li>
+              <li>Linux</li>
+              <li>GitHub Actions</li>
+              <li>AWS</li>
+              <li>Prometheus</li>
+              <li>Grafana</li>
+            </ul>
+          </div>
+
+          <div class="skill-linha">
+            <div class="skill-rotulo">
+              <span class="ico-box"><svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 3h6"/><path d="M10 3v6.5L4.6 19a2 2 0 0 0 1.7 3h11.4a2 2 0 0 0 1.7-3L14 9.5V3"/><path d="M6.6 15h10.8"/></svg></span>
+              <span>Testes e processo</span>
+            </div>
+            <ul class="stack">
+              <li>JUnit</li>
+              <li>Jest</li>
+              <li>Maven</li>
+              <li>Code review</li>
+              <li>ESLint</li>
+              <li>Prettier</li>
+              <li>Husky</li>
+              <li>Git</li>
+              <li>Scrum</li>
+              <li>Kanban</li>
+            </ul>
           </div>
         </div>
       </section>
 
+      <!-- ===== CONTATO ===== -->
       <section id="contato" class="contato">
-        <h2>Contato</h2>
+        <h2 data-reveal>Contato</h2>
         <div class="contatos">
-          <div class="contato-card">
+          <a
+            class="contato-card"
+            href="mailto:pedrocostaw222@gmail.com"
+            data-reveal
+          >
+            <span class="ico-box"><svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4.5" width="20" height="15" rx="2.5"/><path d="m21.5 7.5-9.5 6-9.5-6"/></svg></span>
             <h3>Email</h3>
-            <p><a href="mailto:pedrocostaw222@gmail.com">pedrocostaw222@gmail.com</a></p>
-          </div>
-          <div class="contato-card">
+            <span>pedrocostaw222@gmail.com</span>
+          </a>
+          <a
+            class="contato-card"
+            href="https://www.linkedin.com/in/pedro-costa-widholzer-0b4b90242"
+            target="_blank"
+            rel="noopener"
+            data-reveal
+          >
+            <span class="ico-box"><svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.73v20.54C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .78 23.2 0 22.22 0z"/></svg></span>
             <h3>LinkedIn</h3>
-            <p>
-              <a href="https://www.linkedin.com/in/pedro-costa-widholzer-0b4b90242" target="_blank">
-                Linkedin
-              </a>
-            </p>
-          </div>
+            <span>/pedro-costa-widholzer</span>
+          </a>
+          <a
+            class="contato-card"
+            href="https://github.com/widholzerr"
+            target="_blank"
+            rel="noopener"
+            data-reveal
+          >
+            <span class="ico-box"><svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 2.5-.34c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.05 10.05 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg></span>
+            <h3>GitHub</h3>
+            <span>/widholzerr</span>
+          </a>
         </div>
       </section>
     </main>
+
+    <footer class="rodape">
+      <p>Pedro Costa Widholzer · Porto Alegre, RS</p>
+    </footer>
+
+    <script>
+      (function () {
+        var reduz = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var alvos = document.querySelectorAll("[data-reveal]");
+
+        if (reduz || !("IntersectionObserver" in window)) {
+          alvos.forEach(function (el) {
+            el.classList.add("revelado");
+          });
+          return;
+        }
+
+        document.documentElement.classList.add("anima");
+
+        var obs = new IntersectionObserver(
+          function (entradas) {
+            entradas.forEach(function (e, i) {
+              if (!e.isIntersecting) return;
+              var atraso = Math.min(i, 4) * 90;
+              setTimeout(function () {
+                e.target.classList.add("revelado");
+              }, atraso);
+              obs.unobserve(e.target);
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+        );
+
+        alvos.forEach(function (el) {
+          obs.observe(el);
+        });
+
+        // destaque do link de navegação da seção visível
+        var secoes = document.querySelectorAll("main section[id]");
+        var links = {};
+        document.querySelectorAll(".nav a").forEach(function (a) {
+          links[a.getAttribute("href").slice(1)] = a;
+        });
+
+        var navObs = new IntersectionObserver(
+          function (entradas) {
+            entradas.forEach(function (e) {
+              var link = links[e.target.id];
+              if (!link) return;
+              if (e.isIntersecting) {
+                Object.keys(links).forEach(function (k) {
+                  links[k].classList.remove("ativo");
+                });
+                link.classList.add("ativo");
+              }
+            });
+          },
+          { threshold: 0.35, rootMargin: "-80px 0px -50% 0px" }
+        );
+
+        secoes.forEach(function (s) {
+          navObs.observe(s);
+        });
+      })();
+    </script>
   </body>
 </html>
-
-
