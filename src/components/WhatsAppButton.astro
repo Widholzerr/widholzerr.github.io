@@ -1,0 +1,31 @@
+---
+import site from "../data/site.json";
+import { trackAttrs } from "../config";
+
+interface Props {
+  /** chave da mensagem em config.whatsapp.messages */
+  msg: string;
+  /** nome do evento de analytics */
+  event: string;
+  /** assunto para o aria-label, ex.: "upgrade de Angular" */
+  topic?: string;
+  label?: string;
+  class?: string;
+}
+const { msg, event, topic, label = site.ui.whatsappLabel, class: cls = "" } = Astro.props;
+const aria = `${topic ? `${site.ui.whatsappAria} ${topic}` : site.ui.whatsappAriaGeneral} ${site.ui.newTab}`;
+const track = trackAttrs(event, { service: msg });
+const { class: trackClass = "", ...trackRest } = track as Record<string, string>;
+---
+
+<!-- href é montado no navegador (src/scripts/site.js) a partir de src/config.ts -->
+<a
+  data-wa={msg}
+  hidden
+  aria-label={aria}
+  class:list={[cls, trackClass]}
+  {...trackRest}>{label}</a
+>
+<noscript>
+  <a class={cls} href={`mailto:${site.profile.email}?subject=${encodeURIComponent(site.placeholders.emailSubject)}`}>{site.ui.emailFallback}</a>
+</noscript>

@@ -7,12 +7,14 @@ import Footer from "../components/Footer.astro";
 import SectionHead from "../components/SectionHead.astro";
 import Placeholder from "../components/Placeholder.astro";
 import site from "../data/site.json";
-import { ctaHref, ctaExternal, whatsappUrl } from "../data/cta";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import ScheduleButton from "../components/ScheduleButton.astro";
 
 const { profile } = site;
 const s = site.services;
 const pad = (n: number) => String(n).padStart(2, "0");
-const extra = ctaExternal ? { target: "_blank", rel: "noopener" } : {};
+// Cases só aparecem se tiverem dado de exibição (número ou, para cliente, autorização e link)
+const cases = s.cases.items.filter((c: any) => c.value || (c.authorized && c.link?.url));
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -44,8 +46,10 @@ const jsonLd = {
     <div class="s-hero__row">
       <p class="s-hero__lead" data-reveal data-delay="300">{s.hero.lead}</p>
       <div class="s-hero__cta" data-reveal data-delay="380">
-        <a class="btn btn--fg btn--xl" href={ctaHref} {...extra}>{s.hero.cta} <span aria-hidden="true">→</span></a>
-        {!whatsappUrl && <Placeholder label={site.placeholders.whatsapp.label} />}
+        <div class="cta-group">
+          <WhatsAppButton msg="hero" event="cta-hero" class="btn btn--fg btn--xl" />
+          <ScheduleButton event="agendar-hero" class="btn btn--xl btn--outline" />
+        </div>
       </div>
     </div>
     <ul class="topics" data-reveal data-delay="460">
@@ -122,7 +126,7 @@ const jsonLd = {
                   <span class="label label--mut">{s.list.leadTimeLabel}</span>
                   <span class="lead-time">{it.leadTime}</span>
                 </div>
-                <a class="btn btn--acc btn--lg" href={ctaHref} {...extra}>{s.list.panelCta}</a>
+                <WhatsAppButton msg={it.waKey} topic={it.waTopic} event="whatsapp-servico" class="btn btn--acc btn--lg" />
               </div>
             </div>
           </div>
@@ -164,14 +168,22 @@ const jsonLd = {
     </article>
     <div class="case-grid">
       {
-        s.cases.items.map((c, i) => (
+        cases.map((c: any, i: number) => (
           <article class="case" data-reveal data-delay={i * 90}>
             <span class="label label--acc">{c.tag}</span>
             <h3 class="display">{c.name}</h3>
-            <div class="big">
-              <span class="v display">{c.value}</span>
-              <span class="l">{c.label}</span>
-            </div>
+            {c.value ? (
+              <div class="big">
+                <span class="v display">{c.value}</span>
+                <span class="l">{c.label}</span>
+              </div>
+            ) : (
+              <div class="case__text">
+                <p>{c.description}</p>
+                {c.result && <p><strong>{s.cases.resultLabel}:</strong> {c.result}</p>}
+                <a class="link-acc" href={c.link.url} target="_blank" rel="noopener noreferrer" aria-label={`${c.name}, ${c.link.cta.replace(" ↗", "")} ${site.ui.newTab}`}>{c.link.cta}</a>
+              </div>
+            )}
           </article>
         ))
       }
@@ -231,8 +243,8 @@ const jsonLd = {
     <h2 class="display cta__title" id="h-cta" data-reveal data-delay="80">{s.cta.title}<span class="dot">.</span></h2>
     <p class="cta__lead" data-reveal data-delay="140">{s.cta.lead}</p>
     <div class="cta__row" data-reveal data-delay="200">
-      <a class="btn btn--acc btn--xl" href={ctaHref} {...extra}>{s.cta.button}</a>
-      {!whatsappUrl && <Placeholder label={site.placeholders.whatsapp.label} inverse />}
+      <WhatsAppButton msg="cta" event="whatsapp-cta-final" class="btn btn--acc btn--xl" />
+      <ScheduleButton event="agendar-cta-final" class="btn btn--xl btn--outline-inv" />
     </div>
     <a class="cta__mail" href={`mailto:${profile.email}`} data-reveal>{s.cta.emailPrefix}{profile.email}</a>
   </section>

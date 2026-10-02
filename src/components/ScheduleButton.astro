@@ -1,0 +1,28 @@
+---
+import site from "../data/site.json";
+import { config, trackAttrs } from "../config";
+
+interface Props {
+  event: string;
+  class?: string;
+}
+const { event, class: cls = "" } = Astro.props;
+const url = config.schedulingUrl;
+const track = trackAttrs(event, { origem: event });
+const { class: trackClass = "", ...trackRest } = track as Record<string, string>;
+---
+
+{
+  url && (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${site.ui.scheduleAria} ${site.ui.newTab}`}
+      class:list={[cls, trackClass]}
+      {...trackRest}
+    >
+      {site.ui.scheduleLabel}
+    </a>
+  )
+}

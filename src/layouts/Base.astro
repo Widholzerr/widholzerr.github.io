@@ -5,6 +5,7 @@ import "@fontsource-variable/jetbrains-mono/wght.css";
 import "../styles/tokens.css";
 import "../styles/global.css";
 import site from "../data/site.json";
+import { config, analyticsOn } from "../config";
 
 interface Props {
   title: string;
@@ -54,6 +55,16 @@ const ogImage = new URL(site.site.ogImage, site.site.url).href;
         if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
       } catch (e) {}
     </script>
+    {
+      analyticsOn && config.analytics.provider === "umami" && (
+        <script is:inline defer src={config.analytics.scriptUrl} data-website-id={config.analytics.id} />
+      )
+    }
+    {
+      analyticsOn && config.analytics.provider === "plausible" && (
+        <script is:inline defer src={config.analytics.scriptUrl} data-domain={config.analytics.id} />
+      )
+    }
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
   <body>

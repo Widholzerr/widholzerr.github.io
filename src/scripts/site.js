@@ -1,6 +1,8 @@
 // JS do cliente: tema, menu, reveal, linha do tempo, serviços, FAQ e copiar email.
 // Tudo é aprimoramento progressivo: sem JS o conteúdo continua legível.
 
+import { config } from "../config";
+
 const root = document.documentElement;
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -109,3 +111,14 @@ if (copyBtn) {
     t = setTimeout(() => (label.textContent = copyBtn.dataset.idle), 1800);
   });
 }
+
+/* ---- WhatsApp: o link é montado aqui, a partir das partes do número em config.ts ---- */
+const waNumber = config.whatsapp.parts.join("");
+document.querySelectorAll("[data-wa]").forEach((a) => {
+  const msg = config.whatsapp.messages[a.dataset.wa];
+  if (!msg) return; // sem mensagem configurada, o botão continua oculto
+  a.href = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  a.hidden = false;
+});
