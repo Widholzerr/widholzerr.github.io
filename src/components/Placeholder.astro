@@ -1,0 +1,9 @@
+---
+interface Props {
+  label: string;
+  inverse?: boolean;
+}
+const { label, inverse = false } = Astro.props;
+---
+
+<span class:list={["ph", { "ph--inverse": inverse }]}>{label}</span>

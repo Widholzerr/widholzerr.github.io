@@ -1,0 +1,286 @@
+{
+  "_ajuda": "Todo o texto do site mora aqui. Campos com \"url\": null são PLACEHOLDERS: o site mostra um selo tracejado até você preencher o link. Para trocar o WhatsApp, edite placeholders.whatsapp.url.",
+
+  "site": {
+    "url": "https://widholzerr.github.io",
+    "lang": "pt-BR",
+    "locale": "pt_BR",
+    "author": "Pedro Costa Widholzer",
+    "ogImage": "/og.png",
+    "ogImageAlt": "Pedro Costa Widholzer — Desenvolvedor Full Stack",
+    "home": {
+      "title": "Pedro Costa Widholzer | Desenvolvedor Full Stack",
+      "description": "Desenvolvedor Full Stack em Porto Alegre. Java/Spring Boot, TypeScript/Angular e Go: APIs, front-ends e entrega contínua com foco em qualidade."
+    },
+    "services": {
+      "title": "Serviços para empresas | Pedro Costa Widholzer",
+      "description": "Upgrade de Angular, resgate de cobertura de testes e integração de Keycloak/SSO com escopo fechado. Diagnóstico gratuito de 30 minutos."
+    }
+  },
+
+  "profile": {
+    "initials": "PW",
+    "shortName": "Pedro Widholzer",
+    "nameLine1": "Pedro Costa",
+    "nameLine2": "Widholzer",
+    "role": "Desenvolvedor Full Stack",
+    "location": "Porto Alegre",
+    "email": "pedrocostaw222@gmail.com",
+    "photoAlt": "Foto de Pedro Costa Widholzer",
+    "github": { "label": "GitHub", "handle": "/widholzerr", "url": "https://github.com/widholzerr" },
+    "linkedin": { "label": "LinkedIn", "handle": "/in/pedro-costa-widholzer", "url": "https://linkedin.com/in/pedro-costa-widholzer" }
+  },
+
+  "placeholders": {
+    "whatsapp": { "url": null, "label": "Placeholder · link do WhatsApp" },
+    "emailSubject": "Diagnóstico gratuito de 30 min"
+  },
+
+  "ui": {
+    "skipLink": "Pular para o conteúdo",
+    "themeToggle": "Alternar tema claro/escuro",
+    "menu": "Menu",
+    "copyEmail": "Copiar email",
+    "copiedEmail": "Copiado ✓",
+    "footerCopy": "© 2026 Pedro Costa Widholzer"
+  },
+
+  "home": {
+    "nav": [
+      { "label": "Stack", "id": "stack" },
+      { "label": "Trajetória", "id": "trajetoria" },
+      { "label": "Projetos", "id": "projetos" },
+      { "label": "Contato", "id": "contato" }
+    ],
+    "headerCta": { "short": "Serviços", "long": " para empresas" },
+    "hero": {
+      "eyebrow": "Desenvolvedor Full Stack · Porto Alegre",
+      "headline": "Desenvolvedor Full Stack",
+      "lead": "Java/Spring Boot, TypeScript/Angular e Go. APIs, front-ends e entrega contínua com foco em qualidade.",
+      "primaryCta": "Ver trajetória ↓",
+      "now": { "label": "Agora", "title": "Estágio Full Stack — Procempa", "meta": "Spring Boot · Keycloak · Angular" },
+      "education": { "label": "Formação", "title": "Engenharia de Software — PUCRS", "meta": "2023 — 2028/1" }
+    },
+    "stack": {
+      "title": "Stack",
+      "counter": "01 / 04",
+      "groups": [
+        { "name": "Backend", "items": ["Java", "Spring Boot", "Spring Security", "APIs RESTful", "JWT / Keycloak", "Go", "GORM", "PostgreSQL"] },
+        { "name": "Front-end", "items": ["TypeScript", "JavaScript", "Angular", "React", "React Native (Expo)", "HTML5", "CSS3"] },
+        { "name": "Qualidade e práticas", "items": ["POO", "Padrões de projeto", "Testes automatizados (Jest)", "Code review", "ESLint", "Git", "GitHub Actions", "Docker", "AWS", "Scrum / Kanban"] }
+      ],
+      "languagesLabel": "Idiomas",
+      "languages": [
+        { "name": "Português", "level": "Nativo" },
+        { "name": "Inglês", "level": "Intermediário · leitura técnica" },
+        { "name": "Libras", "level": "Intermediário" }
+      ]
+    },
+    "timeline": {
+      "title": "Trajetória",
+      "counter": "02 / 04 · mais recente primeiro",
+      "items": [
+        {
+          "date": "2026 — atual",
+          "tag": "Trabalho",
+          "title": "Estágio Full Stack",
+          "org": "Procempa · Porto Alegre",
+          "stats": [
+            { "value": "16→19", "label": "migração Angular em produção, em 2 semanas" },
+            { "value": "97%", "label": "cobertura de testes (era ~30%)" },
+            { "value": "20+", "label": "telas Angular consumindo APIs REST" }
+          ],
+          "points": [
+            "APIs REST em Spring Boot com Spring Security + Keycloak (JWT)",
+            "Migração de backend NestJS para Java/Spring Boot em sistema corporativo",
+            "Migração Angular 16 → 19 em produção em 2 semanas",
+            "20+ telas Angular consumindo APIs REST",
+            "Cobertura de testes de ~30% para 97%"
+          ]
+        },
+        {
+          "date": "2023 — 2028/1",
+          "tag": "Educação",
+          "title": "Bacharelado em Engenharia de Software",
+          "org": "PUCRS",
+          "points": [],
+          "chips": ["POO", "Padrões de Projeto", "Arquitetura de Software", "Estruturas de Dados", "Engenharia de Requisitos"]
+        },
+        {
+          "date": "AGES · PUCRS",
+          "tag": "Projetos acadêmicos",
+          "title": "Pró-Mata e NoHarm/NITRA",
+          "org": "Agência Experimental de Engenharia de Software",
+          "points": [
+            "Pró-Mata — time de 16 pessoas, projeto destaque",
+            "NoHarm/NITRA — 10+ PRs aceitos em open source usado em 200+ hospitais"
+          ]
+        },
+        {
+          "date": "Projeto autoral",
+          "tag": "Em homologação",
+          "title": "SCT-PAV",
+          "org": "Plataforma de inspeção de pavimento",
+          "points": ["Em homologação com cliente piloto"],
+          "chips": ["Go", "GORM", "JWT", "PostgreSQL", "Angular 21", "React Native / Expo", "GitHub Actions", "Docker", "AWS"]
+        },
+        {
+          "date": "2021 — 2024",
+          "tag": "Trabalho",
+          "title": "Analista de Suporte Técnico",
+          "org": "HW Center",
+          "points": ["Incidentes de sistemas corporativos com SLA médio de 15 min", "Treinou ~30 usuários"]
+        }
+      ]
+    },
+    "projects": {
+      "title": "Projetos",
+      "counter": "03 / 04 · com resultado",
+      "featured": {
+        "tag": "Projeto autoral · em homologação",
+        "name": "SCT-PAV",
+        "description": "Plataforma de inspeção de pavimento, em homologação com cliente piloto. API Go, web Angular 21 e app React Native/Expo.",
+        "metrics": [
+          { "value": "3 min", "label": "deploy do front-end" },
+          { "value": "6 min", "label": "deploy do back-end" }
+        ],
+        "stack": ["Go", "GORM", "JWT", "PostgreSQL", "Angular 21", "React Native / Expo", "GitHub Actions", "Docker", "AWS"],
+        "image": { "src": null, "label": "screenshot · painel SCT-PAV" },
+        "link": { "url": null, "label": "Placeholder · link do projeto", "cta": "Ver projeto" }
+      },
+      "items": [
+        {
+          "tag": "Open source · AGES",
+          "name": "NoHarm/NITRA",
+          "value": "10+",
+          "valueLabel": "PRs aceitos",
+          "description": "Projeto open source usado em 200+ hospitais.",
+          "link": { "url": null, "label": "Placeholder · link do repositório", "cta": "Ver no GitHub ↗" }
+        },
+        {
+          "tag": "Full stack · AGES",
+          "name": "Pró-Mata",
+          "value": "16",
+          "valueLabel": "pessoas no time",
+          "description": "Desenvolvimento full stack; projeto destaque do semestre.",
+          "link": { "url": "https://github.com/AGES-Pro-Mata", "label": "Placeholder · link do repositório", "cta": "Ver no GitHub ↗" }
+        }
+      ]
+    },
+    "contact": {
+      "counter": "04 / 04 · Contato",
+      "title": "Vamos conversar"
+    },
+    "footerLink": "Precisa de um serviço? Ver /servicos →"
+  },
+
+  "services": {
+    "nav": [
+      { "label": "Serviços", "id": "servicos" },
+      { "label": "Casos", "id": "casos" },
+      { "label": "Como funciona", "id": "como" },
+      { "label": "FAQ", "id": "faq" }
+    ],
+    "brandSub": "Serviços",
+    "portfolioLink": "Portfólio",
+    "headerCta": "Diagnóstico grátis",
+    "hero": {
+      "metaLeft": "Serviços · Desenvolvimento sob escopo fechado",
+      "metaRight": "Angular · Testes · SSO",
+      "headlineLead": "Seu código legado atualizado, testado e seguro —",
+      "headlineAccent": "com escopo fechado.",
+      "lead": "Upgrade de Angular, cobertura de testes e autenticação SSO para times que não podem parar para refatorar.",
+      "cta": "Agendar diagnóstico gratuito de 30 min"
+    },
+    "list": {
+      "title": "Serviços",
+      "counter": "01 · Selecione para ver o escopo",
+      "cueClosed": "Ver escopo",
+      "cueOpen": "Escopo aberto ↓",
+      "problemLabel": "O problema",
+      "proofLabel": "Prova",
+      "includedLabel": "Incluído",
+      "leadTimeLabel": "Prazo típico",
+      "panelCta": "Agendar diagnóstico →",
+      "items": [
+        {
+          "short": "Upgrade de Angular",
+          "title": "Upgrade de Angular com escopo fechado",
+          "problem": "Seu front-end está preso em uma versão antiga, com vulnerabilidades em dependências e dificuldade de evoluir.",
+          "included": ["Auditoria de dependências", "Migração incremental entre versões", "Correção de breaking changes", "Zerar vulnerabilidades conhecidas", "Validação em ambiente de testes"],
+          "leadTime": "Placeholder · a definir no diagnóstico, conforme tamanho do projeto",
+          "proof": "Migração Angular 16 → 19 em produção em 2 semanas, sem incidentes e com vulnerabilidades de dependências zeradas."
+        },
+        {
+          "short": "Cobertura de testes",
+          "title": "Resgate de cobertura de testes em legado",
+          "problem": "Ninguém mexe no código por medo de quebrar algo, e cada deploy é uma aposta.",
+          "included": ["Mapeamento das áreas críticas", "Testes unitários priorizados por risco", "Refatoração segura de métodos grandes", "Padronização com ESLint/Prettier/Husky"],
+          "leadTime": "Placeholder · a definir no diagnóstico",
+          "proof": "Cobertura de testes automatizados elevada de ~30% para 97%, permitindo refatorar e publicar sem regressões."
+        },
+        {
+          "short": "Keycloak / SSO",
+          "title": "Integração de Keycloak / SSO (Java/Spring ou Go)",
+          "problem": "Seu sistema tem login caseiro, difícil de manter, ou precisa integrar com um provedor de identidade corporativo.",
+          "included": ["Configuração de Keycloak", "Autenticação JWT", "Controle de acesso por perfil", "Integração com Spring Security ou API em Go", "Documentação do fluxo"],
+          "leadTime": "Placeholder · a definir no diagnóstico",
+          "proof": "Endpoints protegidos com Spring Security + Keycloak (JWT) em sistema corporativo; API em Go com autenticação JWT em plataforma própria (SCT-PAV)."
+        }
+      ]
+    },
+    "cases": {
+      "title": "Casos",
+      "counter": "02 · Em produção e em homologação",
+      "featured": {
+        "tag": "Destaque · em homologação com cliente piloto",
+        "name": "SCT-PAV",
+        "description": "Plataforma de inspeção de pavimento.",
+        "layers": [
+          { "key": "API", "value": "Go · GORM · JWT · PostgreSQL" },
+          { "key": "Web", "value": "Angular 21" },
+          { "key": "App", "value": "React Native / Expo" },
+          { "key": "CI/CD", "value": "GitHub Actions · Docker · AWS" }
+        ],
+        "metrics": [
+          { "value": "3 min", "label": "deploy do front-end" },
+          { "value": "6 min", "label": "deploy do back-end" }
+        ],
+        "image": { "src": null, "label": "screenshot · app + painel SCT-PAV" }
+      },
+      "items": [
+        { "tag": "Open source · AGES/PUCRS", "name": "NoHarm/NITRA", "value": "10+", "label": "PRs aceitos em projeto usado em 200+ hospitais" },
+        { "tag": "Full stack · AGES/PUCRS", "name": "Pró-Mata", "value": "16", "label": "pessoas no time — projeto destaque do semestre" }
+      ]
+    },
+    "steps": {
+      "title": "Como funciona",
+      "counter": "03 · Quatro etapas",
+      "items": [
+        { "title": "Diagnóstico gratuito de 30 min" },
+        { "title": "Proposta com escopo e prazo fechados" },
+        { "title": "Entrega em etapas, com código no seu repositório" },
+        { "title": "Revisão pós-entrega", "placeholder": "Placeholder · período a definir" }
+      ]
+    },
+    "faq": {
+      "title": "FAQ",
+      "counter": "04 · Respostas curtas",
+      "items": [
+        { "q": "Você trabalha sozinho?", "a": "Sim, com escopo fechado e entrega em etapas." },
+        { "q": "O código fica comigo?", "a": "Sim, tudo entregue no seu repositório." },
+        { "q": "Qual é a sua experiência?", "a": "Desenvolvedor full stack em estágio em empresa de processamento de dados, graduando em Engenharia de Software (PUCRS), com projeto próprio em homologação." },
+        { "q": "Como é o orçamento?", "a": "Definido após o diagnóstico, com escopo fechado." },
+        { "q": "Atende acessibilidade (Libras)?", "a": "Tenho Libras intermediário e priorizo acessibilidade nos projetos." }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Comece pelo diagnóstico",
+      "title": "Diagnóstico gratuito de 30 min",
+      "lead": "Proposta com escopo e prazo fechados. Código entregue no seu repositório.",
+      "button": "Agendar diagnóstico gratuito de 30 min →",
+      "emailPrefix": "ou "
+    },
+    "footerLink": "Portfólio →"
+  }
+}

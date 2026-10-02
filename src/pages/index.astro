@@ -1,0 +1,225 @@
+---
+import { Image } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SectionHead from "../components/SectionHead.astro";
+import Placeholder from "../components/Placeholder.astro";
+import photo from "../assets/fotoDePerfil.jpg";
+import site from "../data/site.json";
+
+const { profile, ui } = site;
+const h = site.home;
+const pad = (n: number) => String(n).padStart(2, "0");
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.nameLine1 + " " + profile.nameLine2,
+  jobTitle: profile.role,
+  url: site.site.url,
+  email: profile.email,
+  address: { "@type": "PostalAddress", addressLocality: profile.location, addressCountry: "BR" },
+  sameAs: [profile.github.url, profile.linkedin.url],
+};
+---
+
+<Base title={site.site.home.title} description={site.site.home.description} path="/" jsonLd={jsonLd}>
+  <Header slot="header" variant="home" />
+
+  <section class="section hero" aria-labelledby="titulo">
+    <p class="hero__eyebrow label" data-reveal>
+      <span class="pulse" aria-hidden="true"></span>{h.hero.eyebrow}
+    </p>
+    <h1 class="display" id="titulo">
+      <span class="line"><span data-reveal data-delay="80">{profile.nameLine1}</span></span>
+      <span class="line"><span data-reveal data-delay="180">{profile.nameLine2}<span class="dot">.</span></span></span>
+    </h1>
+
+    <div class="hero__grid">
+      <div data-reveal data-delay="280">
+        <p class="hero__role display">{h.hero.headline}</p>
+        <p class="hero__lead">{h.hero.lead}</p>
+        <div class="hero__ctas">
+          <a class="btn btn--fg btn--lg" href="#trajetoria">{h.hero.primaryCta}</a>
+          <a class="btn btn--lg btn--ghost" href={profile.github.url} target="_blank" rel="noopener">{profile.github.label} ↗</a>
+          <a class="btn btn--lg btn--ghost" href={profile.linkedin.url} target="_blank" rel="noopener">{profile.linkedin.label} ↗</a>
+        </div>
+      </div>
+
+      <div class="facts" data-reveal data-delay="360">
+        <div>
+          <div class="label label--acc">{h.hero.now.label}</div>
+          <div class="t">{h.hero.now.title}</div>
+          <div class="m">{h.hero.now.meta}</div>
+        </div>
+        <div>
+          <div class="label label--mut">{h.hero.education.label}</div>
+          <div class="t">{h.hero.education.title}</div>
+          <div class="m">{h.hero.education.meta}</div>
+        </div>
+      </div>
+
+      <div class="portrait" data-reveal data-delay="440">
+        <Image
+          src={photo}
+          alt={profile.photoAlt}
+          widths={[220, 440, 660]}
+          sizes="(min-width: 760px) 200px, 220px"
+          width={440}
+          height={550}
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="stack" aria-labelledby="h-stack">
+    <SectionHead id="h-stack" title={h.stack.title} counter={h.stack.counter} />
+    <div class="stack-grid">
+      {
+        h.stack.groups.map((g, i) => (
+          <div class="stack-card" data-reveal data-delay={i * 90}>
+            <header>
+              <h3 class="display">{g.name}</h3>
+              <span class="n">{pad(g.items.length)}</span>
+            </header>
+            <ul class="tags">
+              {g.items.map((it) => <li class="tag">{it}</li>)}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+    <div class="langs" data-reveal>
+      <h3 class="label">{h.stack.languagesLabel}</h3>
+      {
+        h.stack.languages.map((l) => (
+          <div>
+            <div class="nm">{l.name}</div>
+            <div class="lv">{l.level}</div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section section--alt" id="trajetoria" aria-labelledby="h-traj">
+    <SectionHead id="h-traj" title={h.timeline.title} counter={h.timeline.counter} />
+    <div class="timeline" data-timeline>
+      <div class="timeline__rail" aria-hidden="true"></div>
+      <div class="timeline__fill" data-fill aria-hidden="true"></div>
+      <ol>
+        {
+          h.timeline.items.map((t: any) => (
+            <li class="tl-item" data-reveal>
+              <span class="tl-dot" aria-hidden="true"></span>
+              <div class="tl-date">
+                <div class="d">{t.date}</div>
+                <span class="label">{t.tag}</span>
+              </div>
+              <div class="tl-body">
+                <h3 class="display">{t.title}</h3>
+                <p class="org">{t.org}</p>
+                {t.stats && (
+                  <dl class="metrics tl-stats">
+                    {t.stats.map((s: any) => (
+                      <div>
+                        <dt class="v display">{s.value}</dt>
+                        <dd class="l">{s.label}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                )}
+                {t.points.length > 0 && (
+                  <ul class="points">{t.points.map((p: string) => <li><span>{p}</span></li>)}</ul>
+                )}
+                {t.chips && <ul class="chips">{t.chips.map((c: string) => <li class="chip">{c}</li>)}</ul>}
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="projetos" aria-labelledby="h-proj">
+    <SectionHead id="h-proj" title={h.projects.title} counter={h.projects.counter} />
+
+    <article class="feature" data-reveal>
+      <div class="feature__img ph-img">
+        <span>{h.projects.featured.image.label}</span>
+      </div>
+      <div class="feature__body">
+        <span class="label label--acc">{h.projects.featured.tag}</span>
+        <h3 class="display">{h.projects.featured.name}</h3>
+        <p>{h.projects.featured.description}</p>
+        <dl class="metrics">
+          {
+            h.projects.featured.metrics.map((m) => (
+              <div>
+                <dt class="v display">{m.value}</dt>
+                <dd class="l">{m.label}</dd>
+              </div>
+            ))
+          }
+        </dl>
+        <ul class="chips">{h.projects.featured.stack.map((c) => <li class="chip">{c}</li>)}</ul>
+        {
+          h.projects.featured.link.url ? (
+            <a class="link-acc" href={h.projects.featured.link.url} target="_blank" rel="noopener">{h.projects.featured.link.cta} ↗</a>
+          ) : (
+            <Placeholder label={h.projects.featured.link.label} />
+          )
+        }
+      </div>
+    </article>
+
+    <div class="proj-grid">
+      {
+        h.projects.items.map((p, i) => (
+          <article class="proj" data-reveal data-delay={i * 90}>
+            <span class="label label--acc">{p.tag}</span>
+            <h3 class="display">{p.name}</h3>
+            <div class="big">
+              <span class="v display">{p.value}</span>
+              <span class="l">{p.valueLabel}</span>
+            </div>
+            <p>{p.description}</p>
+            {
+              p.link.url ? (
+                <a class="link-acc" href={p.link.url} target="_blank" rel="noopener">{p.link.cta}</a>
+              ) : (
+                <Placeholder label={p.link.label} />
+              )
+            }
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section section--inverse" id="contato" aria-labelledby="h-contato">
+    <span class="label" data-reveal>{h.contact.counter}</span>
+    <h2 class="display contact__title" id="h-contato" data-reveal>{h.contact.title}<span class="dot">.</span></h2>
+    <div class="contact__mail" data-reveal>
+      <a class="display" href={`mailto:${profile.email}`}>{profile.email}</a>
+      <button class="copy-btn" type="button" data-copy={profile.email} data-idle={ui.copyEmail} data-done={ui.copiedEmail}>
+        <span data-copy-label aria-live="polite">{ui.copyEmail}</span>
+      </button>
+    </div>
+    <div class="contact__links">
+      {
+        [profile.linkedin, profile.github].map((l) => (
+          <a href={l.url} target="_blank" rel="noopener" data-reveal>
+            <span>{l.label} <small>{l.handle}</small></span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <Footer slot="footer" variant="home" />
+</Base>

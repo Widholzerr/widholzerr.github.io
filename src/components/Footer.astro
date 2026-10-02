@@ -1,0 +1,24 @@
+---
+import site from "../data/site.json";
+
+interface Props {
+  variant: "home" | "services";
+}
+const { variant } = Astro.props;
+const { profile, ui } = site;
+---
+
+<footer class="footer">
+  <span>{ui.footerCopy}</span>
+  {
+    variant === "home" ? (
+      <a href="/servicos">{site.home.footerLink}</a>
+    ) : (
+      <span class="footer__links">
+        <a href="/">{site.services.footerLink}</a>
+        <a href={profile.linkedin.url} target="_blank" rel="noopener">{profile.linkedin.label} ↗</a>
+        <a href={profile.github.url} target="_blank" rel="noopener">{profile.github.label} ↗</a>
+      </span>
+    )
+  }
+</footer>

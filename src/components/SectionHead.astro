@@ -1,0 +1,14 @@
+---
+interface Props {
+  title: string;
+  counter: string;
+  id?: string;
+  plain?: boolean;
+}
+const { title, counter, id, plain = false } = Astro.props;
+---
+
+<div class:list={["section-head", { "section-head--plain": plain }]} data-reveal>
+  <h2 class="display" id={id}>{title}</h2>
+  <span class="label">{counter}</span>
+</div>
