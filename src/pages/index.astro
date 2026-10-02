@@ -170,7 +170,7 @@ const jsonLd = {
           h.projects.featured.link.url ? (
             <a class="link-acc" href={h.projects.featured.link.url} target="_blank" rel="noopener">{h.projects.featured.link.cta} ↗</a>
           ) : (
-            <Placeholder label={h.projects.featured.link.label} />
+            <span class="label">{h.projects.featured.link.note}</span>
           )
         }
       </div>

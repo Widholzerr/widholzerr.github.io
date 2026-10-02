@@ -146,7 +146,7 @@
         ],
         "stack": ["Go", "GORM", "JWT", "PostgreSQL", "Angular 21", "React Native / Expo", "GitHub Actions", "Docker", "AWS"],
         "image": { "src": null, "label": "screenshot · painel SCT-PAV" },
-        "link": { "url": null, "label": "Placeholder · link do projeto", "cta": "Ver projeto" }
+        "link": { "url": null, "note": "Repositório privado", "cta": "Ver projeto" }
       },
       "items": [
         {
