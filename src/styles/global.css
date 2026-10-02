@@ -130,16 +130,6 @@ button { font: inherit; color: inherit; }
   gap: 10px;
   text-decoration: none;
 }
-.brand__mark {
-  width: 34px;
-  height: 34px;
-  display: grid;
-  place-items: center;
-  background: var(--fg);
-  color: var(--bg);
-  font: 600 12px var(--fM);
-  border-radius: var(--r);
-}
 .brand__name { font: 600 15px/1 var(--fB); letter-spacing: -0.01em; }
 .brand__text { display: flex; flex-direction: column; gap: 3px; }
 .brand__sub { font: 500 10px/1 var(--fM); letter-spacing: 0.14em; text-transform: uppercase; color: var(--mut); }
