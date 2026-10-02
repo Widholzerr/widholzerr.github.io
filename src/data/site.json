@@ -155,7 +155,7 @@
           "value": "10+",
           "valueLabel": "PRs aceitos",
           "description": "Projeto open source usado em mais de 200 hospitais.",
-          "link": { "url": null, "label": "Placeholder · link do repositório", "cta": "Ver no GitHub ↗" }
+          "link": { "url": "https://github.com/noharm-nutricao", "label": "Placeholder · link do repositório", "cta": "Ver no GitHub ↗" }
         },
         {
           "tag": "Full stack · AGES",
@@ -206,7 +206,7 @@
           "title": "Upgrade de Angular com escopo fechado",
           "problem": "Seu front-end está preso em uma versão antiga, com vulnerabilidades em dependências e dificuldade de evoluir.",
           "included": ["Auditoria de dependências", "Migração incremental entre versões", "Correção de breaking changes", "Zerar vulnerabilidades conhecidas", "Validação em ambiente de testes"],
-          "leadTime": "Placeholder · a definir no diagnóstico, conforme tamanho do projeto",
+          "leadTime": "Conforme o escopo",
           "proof": "Migração do Angular 16 para o 19 em produção, em 2 semanas, sem incidentes e com as vulnerabilidades de dependências zeradas."
         },
         {
@@ -214,7 +214,7 @@
           "title": "Resgate de cobertura de testes em legado",
           "problem": "Ninguém mexe no código por medo de quebrar algo, e cada deploy é uma aposta.",
           "included": ["Mapeamento das áreas críticas", "Testes unitários priorizados por risco", "Refatoração segura de métodos grandes", "Padronização com ESLint, Prettier e Husky"],
-          "leadTime": "Placeholder · a definir no diagnóstico",
+          "leadTime": "Conforme o escopo",
           "proof": "Cobertura de testes automatizados elevada de cerca de 30% para 97%, o que permitiu refatorar e publicar sem regressões."
         },
         {
@@ -222,7 +222,7 @@
           "title": "Integração de Keycloak e SSO em Java/Spring ou Go",
           "problem": "Seu sistema tem login caseiro, difícil de manter, ou precisa integrar com um provedor de identidade corporativo.",
           "included": ["Configuração de Keycloak", "Autenticação JWT", "Controle de acesso por perfil", "Integração com Spring Security ou API em Go", "Documentação do fluxo"],
-          "leadTime": "Placeholder · a definir no diagnóstico",
+          "leadTime": "Conforme o escopo",
           "proof": "Endpoints protegidos com Spring Security e Keycloak, usando JWT, em um sistema corporativo. Também uma API em Go com autenticação JWT na minha plataforma própria, o SCT-PAV."
         }
       ]

@@ -639,6 +639,7 @@ html:not(.js) .panel[hidden] { display: grid; }
 .incl .n { font: 500 12px/1.9 var(--fM); color: var(--accTx); }
 .panel__foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; }
 .panel__foot > div { display: flex; flex-direction: column; gap: 8px; }
+.lead-time { font: 600 17px var(--fB); }
 
 @media (min-width: 760px) {
   .svc-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
