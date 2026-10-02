@@ -544,6 +544,7 @@ button { font: inherit; color: inherit; }
 .s-hero__row { display: grid; gap: 32px 64px; margin-top: 56px; align-items: end; }
 .s-hero__lead { font-size: var(--lead); line-height: 1.45; max-width: 40ch; text-wrap: pretty; }
 .s-hero__cta { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.s-hero__cta .ph { align-self: auto; }
 .topics { display: grid; margin-top: 72px; border-top: 1px solid var(--fg); }
 .topics a {
   display: flex;

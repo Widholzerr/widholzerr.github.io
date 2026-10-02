@@ -32,7 +32,7 @@
   },
 
   "placeholders": {
-    "whatsapp": { "url": null, "label": "Placeholder · link do WhatsApp" },
+    "whatsapp": { "url": "https://wa.me/5551996882830", "label": "Placeholder · link do WhatsApp" },
     "emailSubject": "Diagnóstico gratuito de 30 min"
   },
 
