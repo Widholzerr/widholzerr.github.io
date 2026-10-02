@@ -1,0 +1,241 @@
+---
+import { Image } from "astro:assets";
+import dashboard from "../assets/sct-pav-dashboard.jpg";
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SectionHead from "../components/SectionHead.astro";
+import Placeholder from "../components/Placeholder.astro";
+import site from "../data/site.json";
+import { ctaHref, ctaExternal, whatsappUrl } from "../data/cta";
+
+const { profile } = site;
+const s = site.services;
+const pad = (n: number) => String(n).padStart(2, "0");
+const extra = ctaExternal ? { target: "_blank", rel: "noopener" } : {};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: `${profile.nameLine1} ${profile.nameLine2} — Serviços`,
+  url: `${site.site.url}/servicos`,
+  provider: { "@type": "Person", name: `${profile.nameLine1} ${profile.nameLine2}` },
+  areaServed: "BR",
+  description: site.site.services.description,
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: s.list.title,
+    itemListElement: s.list.items.map((i) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name: i.title, description: i.problem },
+    })),
+  },
+};
+---
+
+<Base title={site.site.services.title} description={site.site.services.description} path="/servicos" jsonLd={jsonLd}>
+  <Header slot="header" variant="services" />
+
+  <section class="section s-hero" aria-labelledby="titulo">
+    <h1 class="display" id="titulo">
+      <span data-reveal data-delay="60" style="display:block">{s.hero.headlineLead}</span>
+      <span data-reveal data-delay="200" class="accent">{s.hero.headlineAccent}</span>
+    </h1>
+    <div class="s-hero__row">
+      <p class="s-hero__lead" data-reveal data-delay="300">{s.hero.lead}</p>
+      <div class="s-hero__cta" data-reveal data-delay="380">
+        <a class="btn btn--fg btn--xl" href={ctaHref} {...extra}>{s.hero.cta} <span aria-hidden="true">→</span></a>
+        {!whatsappUrl && <Placeholder label={site.placeholders.whatsapp.label} />}
+      </div>
+    </div>
+    <ul class="topics" data-reveal data-delay="460">
+      {
+        s.list.items.map((it, i) => (
+          <li>
+            <a href="#servicos" data-select={i}>
+              <span><span class="n">{pad(i + 1)}</span>{it.short}</span>
+              <span aria-hidden="true">↓</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="section" id="servicos" aria-labelledby="h-serv" style="border-top:0">
+    <SectionHead id="h-serv" title={s.list.title} counter={s.list.counter} plain />
+    <div class="svc-grid">
+      {
+        s.list.items.map((it, i) => (
+          <button
+            type="button"
+            class="svc"
+            style={`--i:${i}`}
+            data-reveal
+            data-delay={i * 90}
+            data-svc
+            data-cue-open={s.list.cueOpen}
+            data-cue-closed={s.list.cueClosed}
+            aria-expanded={i === 0 ? "true" : "false"}
+            aria-controls={`painel-${i}`}
+          >
+            <span class="svc__top">
+              <span class="svc__n">{pad(i + 1)}</span>
+              <span class="svc__arrow" aria-hidden="true">↗</span>
+            </span>
+            <span class="svc__title display">{it.title}</span>
+            <span class="svc__problem">“{it.problem}”</span>
+            <span class="svc__cue" data-cue>{i === 0 ? s.list.cueOpen : s.list.cueClosed}</span>
+          </button>
+        ))
+      }
+      {
+        s.list.items.map((it, i) => (
+          <div
+            class="panel"
+            id={`painel-${i}`}
+            style={`--i:${i}`}
+            role="region"
+            aria-label={it.title}
+            data-panel
+            hidden={i !== 0}
+          >
+            <div class="panel__col">
+              <div>
+                <div class="label label--acc">{pad(i + 1)} · {s.list.problemLabel}</div>
+                <p class="problem display">{it.problem}</p>
+              </div>
+              <div class="proof">
+                <div class="label">{s.list.proofLabel}</div>
+                <p>{it.proof}</p>
+              </div>
+            </div>
+            <div class="panel__col">
+              <div>
+                <div class="label label--mut">{s.list.includedLabel}</div>
+                <ol class="incl">
+                  {it.included.map((x, j) => <li><span class="n">{pad(j + 1)}</span><span>{x}</span></li>)}
+                </ol>
+              </div>
+              <div class="panel__foot">
+                <div>
+                  <span class="label label--mut">{s.list.leadTimeLabel}</span>
+                  <span class="lead-time">{it.leadTime}</span>
+                </div>
+                <a class="btn btn--acc btn--lg" href={ctaHref} {...extra}>{s.list.panelCta}</a>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section section--alt" id="casos" aria-labelledby="h-casos">
+    <SectionHead id="h-casos" title={s.cases.title} counter={s.cases.counter} plain />
+    <article class="case-feature" data-reveal>
+      <div class="case-feature__body">
+        <span class="label label--acc">{s.cases.featured.tag}</span>
+        <h3 class="display">{s.cases.featured.name}</h3>
+        <p>{s.cases.featured.description}</p>
+        <dl class="layers">
+          {s.cases.featured.layers.map((l) => (<><dt>{l.key}</dt><dd>{l.value}</dd></>))}
+        </dl>
+        <dl class="big-metrics">
+          {
+            s.cases.featured.metrics.map((m) => (
+              <div>
+                <dt class="v display">{m.value}</dt>
+                <dd class="l">{m.label}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+      <div class="case-feature__img shot">
+        <Image
+          src={dashboard}
+          alt={s.cases.featured.image.alt}
+          widths={[640, 960, 1280]}
+          sizes="(min-width: 760px) 50vw, 100vw"
+          loading="lazy"
+        />
+      </div>
+    </article>
+    <div class="case-grid">
+      {
+        s.cases.items.map((c, i) => (
+          <article class="case" data-reveal data-delay={i * 90}>
+            <span class="label label--acc">{c.tag}</span>
+            <h3 class="display">{c.name}</h3>
+            <div class="big">
+              <span class="v display">{c.value}</span>
+              <span class="l">{c.label}</span>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section" id="como" aria-labelledby="h-como" style="border-top:0">
+    <SectionHead id="h-como" title={s.steps.title} counter={s.steps.counter} plain />
+    <ol class="steps">
+      {
+        s.steps.items.map((st: any, i) => (
+          <li class="step" data-reveal data-delay={i * 110}>
+            <span class="num display" aria-hidden="true">{i + 1}</span>
+            <span class="t"><span class="sr-only">Etapa {i + 1}: </span>{st.title}</span>
+            {st.description && <p class="step__desc">{st.description}</p>}
+            {st.placeholder && <Placeholder label={st.placeholder} />}
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="h-faq">
+    <div class="faq-wrap">
+      <div data-reveal>
+        <h2 class="display" id="h-faq">{s.faq.title}</h2>
+        <p class="label">{s.faq.counter}</p>
+      </div>
+      <div class="faq" data-reveal>
+        {
+          s.faq.items.map((f, i) => (
+            <div class="faq__item">
+              <h3>
+                <button
+                  type="button"
+                  class="faq__q"
+                  data-faq
+                  aria-expanded={i === 0 ? "true" : "false"}
+                  aria-controls={`faq-${i}`}
+                >
+                  <span>{f.q}</span>
+                  <span class="faq__icon" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="faq__a" id={`faq-${i}`} role="region" aria-label={f.q}>
+                <div><p>{f.a}</p></div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--inverse" id="cta" aria-labelledby="h-cta">
+    <p class="label" data-reveal style="color:var(--accOnFg);opacity:1">{s.cta.eyebrow}</p>
+    <h2 class="display cta__title" id="h-cta" data-reveal data-delay="80">{s.cta.title}<span class="dot">.</span></h2>
+    <p class="cta__lead" data-reveal data-delay="140">{s.cta.lead}</p>
+    <div class="cta__row" data-reveal data-delay="200">
+      <a class="btn btn--acc btn--xl" href={ctaHref} {...extra}>{s.cta.button}</a>
+      {!whatsappUrl && <Placeholder label={site.placeholders.whatsapp.label} inverse />}
+    </div>
+    <a class="cta__mail" href={`mailto:${profile.email}`} data-reveal>{s.cta.emailPrefix}{profile.email}</a>
+  </section>
+
+  <Footer slot="footer" variant="services" />
+</Base>

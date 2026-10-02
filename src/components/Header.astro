@@ -1,0 +1,60 @@
+---
+import site from "../data/site.json";
+
+interface Props {
+  variant: "home" | "services";
+}
+const { variant } = Astro.props;
+const { profile, ui } = site;
+const isHome = variant === "home";
+const d = isHome ? site.home : site.services;
+const homeHref = "/";
+---
+
+<header class="header">
+  <a class="brand" href={isHome ? "/" : "/servicos"}>
+    <span class="brand__mark" aria-hidden="true">{profile.initials}</span>
+    {
+      isHome ? (
+        <span class="brand__name">{profile.shortName}</span>
+      ) : (
+        <span class="brand__text">
+          <span class="brand__name">{profile.shortName}</span>
+          <span class="brand__sub">{site.services.brandSub}</span>
+        </span>
+      )
+    }
+  </a>
+
+  <nav class="nav" aria-label="Seções">
+    {d.nav.map((n) => <a href={`#${n.id}`}>{n.label}</a>)}
+  </nav>
+
+  <div class="header__actions">
+    <button class="icon-btn" type="button" data-theme-toggle aria-label={ui.themeToggle}>
+      <span class="half" aria-hidden="true"></span>
+    </button>
+    {
+      isHome ? (
+        <a class="btn btn--acc" href="/servicos">
+          {site.home.headerCta.short}
+          <span class="hide-narrow">{site.home.headerCta.long}</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      ) : (
+        <>
+          <a class="btn hide-narrow-flex" href={homeHref}>{site.services.portfolioLink}</a>
+          <a class="btn btn--acc" href="#cta">{site.services.headerCta}</a>
+        </>
+      )
+    }
+    <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-mobile" aria-label={ui.menu}>
+      <span class="bar" aria-hidden="true"></span><span class="bar" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="menu-mobile" data-menu hidden>
+  {d.nav.map((n) => <a href={`#${n.id}`}>{n.label}</a>)}
+  {!isHome && <a href={homeHref}>{site.services.portfolioLink} →</a>}
+</div>
