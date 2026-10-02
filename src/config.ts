@@ -20,7 +20,7 @@ export const config = {
   },
 
   /** URL da agenda (Cal.com ou similar). Com `null`, o botão "Agendar" não é exibido. */
-  schedulingUrl: null as string | null,
+  schedulingUrl: "https://cal.com/pedro-costa-widholzer-e0ekgo/30min" as string | null,
 
   /** Analytics sem cookies. Com provider ou id em `null`, nenhum script é carregado. */
   analytics: {
