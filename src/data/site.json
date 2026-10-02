@@ -145,7 +145,7 @@
           { "value": "6 min", "label": "deploy do back-end" }
         ],
         "stack": ["Go", "GORM", "JWT", "PostgreSQL", "Angular 21", "React Native / Expo", "GitHub Actions", "Docker", "AWS"],
-        "image": { "src": null, "label": "screenshot · painel SCT-PAV" },
+        "image": { "alt": "Painel do SCT-PAV com indicadores de conformidade, status dos ensaios por categoria, conformidade por obra e volume semanal." },
         "link": { "url": null, "note": "Repositório privado", "cta": "Ver projeto" }
       },
       "items": [
@@ -244,7 +244,7 @@
           { "value": "3 min", "label": "deploy do front-end" },
           { "value": "6 min", "label": "deploy do back-end" }
         ],
-        "image": { "src": null, "label": "screenshot · app + painel SCT-PAV" }
+        "image": { "alt": "Painel do SCT-PAV com indicadores de conformidade, status dos ensaios por categoria, conformidade por obra e volume semanal." }
       },
       "items": [
         { "tag": "Open source · AGES/PUCRS", "name": "NoHarm/NITRA", "value": "10+", "label": "PRs aceitos em um projeto usado em mais de 200 hospitais" },

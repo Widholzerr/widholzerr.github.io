@@ -6,6 +6,7 @@ import Footer from "../components/Footer.astro";
 import SectionHead from "../components/SectionHead.astro";
 import Placeholder from "../components/Placeholder.astro";
 import photo from "../assets/fotoDePerfil.jpg";
+import dashboard from "../assets/sct-pav-dashboard.jpg";
 import site from "../data/site.json";
 
 const { profile, ui } = site;
@@ -148,8 +149,14 @@ const jsonLd = {
     <SectionHead id="h-proj" title={h.projects.title} counter={h.projects.counter} />
 
     <article class="feature" data-reveal>
-      <div class="feature__img ph-img">
-        <span>{h.projects.featured.image.label}</span>
+      <div class="feature__img shot">
+        <Image
+          src={dashboard}
+          alt={h.projects.featured.image.alt}
+          widths={[640, 960, 1280]}
+          sizes="(min-width: 760px) 50vw, 100vw"
+          loading="lazy"
+        />
       </div>
       <div class="feature__body">
         <span class="label label--acc">{h.projects.featured.tag}</span>

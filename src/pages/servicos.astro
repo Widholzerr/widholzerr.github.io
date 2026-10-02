@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import dashboard from "../assets/sct-pav-dashboard.jpg";
 import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -150,7 +152,15 @@ const jsonLd = {
           }
         </dl>
       </div>
-      <div class="case-feature__img ph-img"><span>{s.cases.featured.image.label}</span></div>
+      <div class="case-feature__img shot">
+        <Image
+          src={dashboard}
+          alt={s.cases.featured.image.alt}
+          widths={[640, 960, 1280]}
+          sizes="(min-width: 760px) 50vw, 100vw"
+          loading="lazy"
+        />
+      </div>
     </article>
     <div class="case-grid">
       {
