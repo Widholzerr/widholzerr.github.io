@@ -526,16 +526,8 @@ button { font: inherit; color: inherit; }
 .footer__links a:not(:first-child) { color: inherit; }
 
 /* ---------- /servicos ---------- */
-.s-hero { padding: calc(var(--sec) * 0.6) var(--px) 0; border-top: 0; }
-.s-hero__meta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 12px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--line);
-}
-.s-hero h1 { margin-top: 48px; max-width: 15ch; font-size: var(--h1); line-height: 0.98; text-wrap: balance; }
+.s-hero { padding: clamp(40px, 6vw, 72px) var(--px) 0; border-top: 0; }
+.s-hero h1 { max-width: 15ch; font-size: var(--h1); line-height: 0.98; text-wrap: balance; }
 .s-hero h1 .accent { display: inline-block; position: relative; color: var(--accTx); }
 .s-hero h1 .accent::after {
   content: "";

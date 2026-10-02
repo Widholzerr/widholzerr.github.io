@@ -185,8 +185,6 @@
     "portfolioLink": "Portfólio",
     "headerCta": "Diagnóstico grátis",
     "hero": {
-      "metaLeft": "Serviços · Desenvolvimento sob escopo fechado",
-      "metaRight": "Angular · Testes · SSO",
       "headlineLead": "Seu código legado atualizado, testado e seguro —",
       "headlineAccent": "com escopo fechado.",
       "lead": "Upgrade de Angular, cobertura de testes e autenticação SSO para times que não podem parar para refatorar.",
