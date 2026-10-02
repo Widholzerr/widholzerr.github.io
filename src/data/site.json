@@ -258,7 +258,10 @@
         { "title": "Diagnóstico gratuito de 30 min" },
         { "title": "Proposta com escopo e prazo fechados" },
         { "title": "Entrega em etapas, com código no seu repositório" },
-        { "title": "Revisão pós-entrega", "placeholder": "Placeholder · período a definir" }
+        {
+          "title": "Revisão pós-entrega: 15 dias",
+          "description": "Correção de defeitos no escopo entregue, sem custo. Novas funcionalidades ou mudanças de escopo são orçadas à parte."
+        }
       ]
     },
     "faq": {

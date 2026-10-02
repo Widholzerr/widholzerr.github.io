@@ -176,6 +176,7 @@ const jsonLd = {
           <li class="step" data-reveal data-delay={i * 110}>
             <span class="num display" aria-hidden="true">{i + 1}</span>
             <span class="t"><span class="sr-only">Etapa {i + 1}: </span>{st.title}</span>
+            {st.description && <p class="step__desc">{st.description}</p>}
             {st.placeholder && <Placeholder label={st.placeholder} />}
           </li>
         ))
