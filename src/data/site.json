@@ -1,5 +1,5 @@
 {
-  "_ajuda": "Todo o texto do site mora aqui. Campos com \"url\": null são PLACEHOLDERS: o site mostra um selo tracejado até você preencher o link. Para trocar o WhatsApp, edite placeholders.whatsapp.url.",
+  "_ajuda": "Todo o texto do site mora aqui. Número de WhatsApp, mensagens, URL da agenda e analytics ficam em src/config.ts. Campos com url null não aparecem na tela.",
   "site": {
     "url": "https://widholzerr.github.io",
     "lang": "pt-BR",
@@ -13,7 +13,7 @@
     },
     "services": {
       "title": "Serviços para empresas | Pedro Costa Widholzer",
-      "description": "Upgrade de Angular, resgate de cobertura de testes, integração de Keycloak e SSO e sistemas sob medida, com escopo fechado. Diagnóstico gratuito de 30 minutos."
+      "description": "Upgrade de Angular, resgate de cobertura de testes, integração de Keycloak e SSO e sistemas sob medida, com escopo fechado. Diagnóstico de 30 minutos para saber se vale atualizar ou refazer."
     }
   },
   "profile": {
@@ -37,11 +37,7 @@
     }
   },
   "placeholders": {
-    "whatsapp": {
-      "url": "https://wa.me/5551996882830",
-      "label": "Placeholder · link do WhatsApp"
-    },
-    "emailSubject": "Diagnóstico gratuito de 30 min"
+    "emailSubject": "Diagnóstico de 30 min"
   },
   "ui": {
     "skipLink": "Pular para o conteúdo",
@@ -49,7 +45,15 @@
     "menu": "Menu",
     "copyEmail": "Copiar email",
     "copiedEmail": "Copiado ✓",
-    "footerCopy": "© 2026 Pedro Costa Widholzer"
+    "footerCopy": "© 2026 Pedro Costa Widholzer",
+    "whatsappLabel": "Conversar no WhatsApp",
+    "whatsappAria": "Conversar no WhatsApp sobre",
+    "whatsappAriaGeneral": "Conversar no WhatsApp para agendar um diagnóstico",
+    "newTab": "(abre em nova aba)",
+    "emailFallback": "Enviar email",
+    "scheduleLabel": "Agendar diagnóstico de 30 min",
+    "scheduleAria": "Agendar diagnóstico de 30 minutos",
+    "analyticsNote": "Métricas anônimas, sem cookies."
   },
   "home": {
     "nav": [
@@ -333,8 +337,7 @@
     "hero": {
       "headlineLead": "Seu código legado atualizado, testado e seguro,",
       "headlineAccent": "com escopo fechado.",
-      "lead": "Upgrade de Angular, cobertura de testes e autenticação SSO para times que não podem parar para refatorar. Também desenvolvo sistemas sob medida.",
-      "cta": "Agendar diagnóstico gratuito de 30 min"
+      "lead": "Upgrade de Angular, cobertura de testes e autenticação SSO para times que não podem parar para refatorar. Também desenvolvo sistemas sob medida."
     },
     "list": {
       "title": "Serviços",
@@ -345,7 +348,6 @@
       "proofLabel": "Prova",
       "includedLabel": "Incluído",
       "leadTimeLabel": "Prazo típico",
-      "panelCta": "Agendar diagnóstico →",
       "items": [
         {
           "short": "Upgrade de Angular",
@@ -359,7 +361,15 @@
             "Validação em ambiente de testes"
           ],
           "leadTime": "Conforme o escopo",
-          "proof": "Migração do Angular 16 para o 19 em produção, em 2 semanas, sem incidentes e com as vulnerabilidades de dependências zeradas."
+          "proof": "Migração do Angular 16 para o 19 em produção, em 2 semanas, sem incidentes e com as vulnerabilidades de dependências zeradas.",
+          "waKey": "angular",
+          "waTopic": "upgrade de Angular",
+          "extraCta": {
+            "label": "Receber mapa de upgrade em 48 h",
+            "waKey": "mapa-angular",
+            "topic": "o mapa de upgrade de Angular em 48 horas",
+            "note": "Mande o package.json do seu projeto e receba, em 48 h, um mapa de versões, vulnerabilidades e riscos de upgrade."
+          }
         },
         {
           "short": "Cobertura de testes",
@@ -372,7 +382,9 @@
             "Padronização com ESLint, Prettier e Husky"
           ],
           "leadTime": "Conforme o escopo",
-          "proof": "Cobertura de testes automatizados elevada de cerca de 30% para 97%, o que permitiu refatorar e publicar sem regressões."
+          "proof": "Cobertura de testes automatizados elevada de cerca de 30% para 97%, o que permitiu refatorar e publicar sem regressões.",
+          "waKey": "testes",
+          "waTopic": "resgate de cobertura de testes"
         },
         {
           "short": "Keycloak / SSO",
@@ -386,7 +398,9 @@
             "Documentação do fluxo"
           ],
           "leadTime": "Conforme o escopo",
-          "proof": "Endpoints protegidos com Spring Security e Keycloak, usando JWT, em um sistema corporativo. Também uma API em Go com autenticação JWT na minha plataforma própria, o SCT-PAV."
+          "proof": "Endpoints protegidos com Spring Security e Keycloak, usando JWT, em um sistema corporativo. Também uma API em Go com autenticação JWT na minha plataforma própria, o SCT-PAV.",
+          "waKey": "sso",
+          "waTopic": "integração Keycloak e SSO"
         },
         {
           "short": "Sistemas sob medida",
@@ -401,7 +415,9 @@
             "Código e documentação no seu repositório"
           ],
           "leadTime": "Conforme o escopo",
-          "proof": "Desenvolvi o SCT-PAV sozinho, hoje em homologação com cliente piloto: API em Go, web em Angular 21 e app em React Native com Expo, com deploy do front-end em 3 min e do back-end em 6 min."
+          "proof": "Desenvolvi o SCT-PAV sozinho, hoje em homologação com cliente piloto: API em Go, web em Angular 21 e app em React Native com Expo, com deploy do front-end em 3 min e do back-end em 6 min.",
+          "waKey": "sob-medida",
+          "waTopic": "sistemas sob medida"
         }
       ]
     },
@@ -456,15 +472,27 @@
           "name": "Pró-Mata",
           "value": "16",
           "label": "pessoas no time, projeto destaque do semestre"
+        },
+        {
+          "tag": "Cliente real · refação de site",
+          "name": "Leve e Limpe",
+          "description": "Site refeito do zero e reestruturado por completo, hoje no ar.",
+          "result": null,
+          "authorized": true,
+          "link": {
+            "url": "https://www.leveelimpe.com.br/",
+            "cta": "Ver o site ↗"
+          }
         }
-      ]
+      ],
+      "resultLabel": "Resultado"
     },
     "steps": {
       "title": "Como funciona",
       "counter": "03 · Quatro etapas",
       "items": [
         {
-          "title": "Diagnóstico gratuito de 30 min"
+          "title": "Diagnóstico de 30 min para saber se vale atualizar ou refazer"
         },
         {
           "title": "Proposta com escopo e prazo fechados"
@@ -506,9 +534,8 @@
     },
     "cta": {
       "eyebrow": "Comece pelo diagnóstico",
-      "title": "Diagnóstico gratuito de 30 min",
+      "title": "Diagnóstico de 30 min: saiba se vale atualizar ou refazer",
       "lead": "Proposta com escopo e prazo fechados. Código entregue no seu repositório.",
-      "button": "Agendar diagnóstico gratuito de 30 min →",
       "emailPrefix": "ou "
     },
     "footerLink": "Portfólio →"

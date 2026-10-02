@@ -1,5 +1,6 @@
 ---
 import site from "../data/site.json";
+import { analyticsOn } from "../config";
 
 interface Props {
   variant: "home" | "services";
@@ -9,7 +10,7 @@ const { profile, ui } = site;
 ---
 
 <footer class="footer">
-  <span>{ui.footerCopy}</span>
+  <span>{ui.footerCopy}{analyticsOn && <small class="footer__note"> · {ui.analyticsNote}</small>}</span>
   {
     variant === "home" ? (
       <a href="/servicos">{site.home.footerLink}</a>
