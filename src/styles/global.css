@@ -565,7 +565,7 @@ button { font: inherit; color: inherit; }
 @media (min-width: 760px) {
   .s-hero__row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .s-hero__cta { align-items: flex-end; }
-  .topics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .topics { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; }
 }
 
 /* cards de serviço + painel */
@@ -644,9 +644,14 @@ html:not(.js) .panel[hidden] { display: grid; }
 .lead-time { font: 600 17px var(--fB); }
 
 @media (min-width: 760px) {
-  .svc-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .svc { order: var(--i); padding: 28px; min-height: 320px; }
+  .svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .svc { order: var(--i); padding: 28px; min-height: 280px; }
   .panel { order: 10; margin-top: 0; padding: 40px; gap: 48px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1100px) {
+  .svc-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .topics { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
 /* casos */
