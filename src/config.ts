@@ -15,6 +15,7 @@ export const config = {
       sso: "Oi Pedro, vi o serviço de integração Keycloak/SSO no seu site e queria conversar sobre o meu projeto.",
       "sob-medida": "Oi Pedro, vi o serviço de sistemas sob medida no seu site e queria conversar sobre o meu projeto.",
       cta: "Oi Pedro, vi seu site e queria agendar um diagnóstico gratuito.",
+      "mapa-angular": "Oi Pedro, vi no seu site o mapa de upgrade em 48 h e queria receber o do meu projeto Angular. Posso te enviar o package.json?",
     } as Record<string, string>,
   },
 
@@ -25,7 +26,7 @@ export const config = {
   analytics: {
     provider: "umami" as "umami" | "plausible" | null,
     /** Umami: ID do site. Plausible: domínio (ex.: "widholzerr.github.io"). */
-    id: null as string | null,
+    id: "a863b519-e624-44c6-b8ba-3ec94e228d14" as string | null,
     scriptUrl: "https://cloud.umami.is/script.js",
   },
 };

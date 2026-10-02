@@ -13,7 +13,7 @@
     },
     "services": {
       "title": "Serviços para empresas | Pedro Costa Widholzer",
-      "description": "Upgrade de Angular, resgate de cobertura de testes, integração de Keycloak e SSO e sistemas sob medida, com escopo fechado. Diagnóstico gratuito de 30 minutos."
+      "description": "Upgrade de Angular, resgate de cobertura de testes, integração de Keycloak e SSO e sistemas sob medida, com escopo fechado. Diagnóstico de 30 minutos para saber se vale atualizar ou refazer."
     }
   },
   "profile": {
@@ -37,7 +37,7 @@
     }
   },
   "placeholders": {
-    "emailSubject": "Diagnóstico gratuito de 30 min"
+    "emailSubject": "Diagnóstico de 30 min"
   },
   "ui": {
     "skipLink": "Pular para o conteúdo",
@@ -48,11 +48,11 @@
     "footerCopy": "© 2026 Pedro Costa Widholzer",
     "whatsappLabel": "Conversar no WhatsApp",
     "whatsappAria": "Conversar no WhatsApp sobre",
-    "whatsappAriaGeneral": "Conversar no WhatsApp para agendar um diagnóstico gratuito",
+    "whatsappAriaGeneral": "Conversar no WhatsApp para agendar um diagnóstico",
     "newTab": "(abre em nova aba)",
     "emailFallback": "Enviar email",
     "scheduleLabel": "Agendar diagnóstico de 30 min",
-    "scheduleAria": "Agendar diagnóstico gratuito de 30 minutos",
+    "scheduleAria": "Agendar diagnóstico de 30 minutos",
     "analyticsNote": "Métricas anônimas, sem cookies."
   },
   "home": {
@@ -363,7 +363,13 @@
           "leadTime": "Conforme o escopo",
           "proof": "Migração do Angular 16 para o 19 em produção, em 2 semanas, sem incidentes e com as vulnerabilidades de dependências zeradas.",
           "waKey": "angular",
-          "waTopic": "upgrade de Angular"
+          "waTopic": "upgrade de Angular",
+          "extraCta": {
+            "label": "Receber mapa de upgrade em 48 h",
+            "waKey": "mapa-angular",
+            "topic": "o mapa de upgrade de Angular em 48 horas",
+            "note": "Mande o package.json do seu projeto e receba, em 48 h, um mapa de versões, vulnerabilidades e riscos de upgrade."
+          }
         },
         {
           "short": "Cobertura de testes",
@@ -486,7 +492,7 @@
       "counter": "03 · Quatro etapas",
       "items": [
         {
-          "title": "Diagnóstico gratuito de 30 min"
+          "title": "Diagnóstico de 30 min para saber se vale atualizar ou refazer"
         },
         {
           "title": "Proposta com escopo e prazo fechados"
@@ -528,7 +534,7 @@
     },
     "cta": {
       "eyebrow": "Comece pelo diagnóstico",
-      "title": "Diagnóstico gratuito de 30 min",
+      "title": "Diagnóstico de 30 min: saiba se vale atualizar ou refazer",
       "lead": "Proposta com escopo e prazo fechados. Código entregue no seu repositório.",
       "emailPrefix": "ou "
     },

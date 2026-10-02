@@ -121,12 +121,24 @@ const jsonLd = {
                   {it.included.map((x, j) => <li><span class="n">{pad(j + 1)}</span><span>{x}</span></li>)}
                 </ol>
               </div>
+              {(it as any).extraCta && <p class="offer">{(it as any).extraCta.note}</p>}
               <div class="panel__foot">
                 <div>
                   <span class="label label--mut">{s.list.leadTimeLabel}</span>
                   <span class="lead-time">{it.leadTime}</span>
                 </div>
-                <WhatsAppButton msg={it.waKey} topic={it.waTopic} event="whatsapp-servico" class="btn btn--acc btn--lg" />
+                <div class="panel__actions">
+                  <WhatsAppButton msg={it.waKey} topic={it.waTopic} event="whatsapp-servico" class="btn btn--acc btn--lg" />
+                  {(it as any).extraCta && (
+                    <WhatsAppButton
+                      msg={(it as any).extraCta.waKey}
+                      topic={(it as any).extraCta.topic}
+                      label={(it as any).extraCta.label}
+                      event="mapa-upgrade-angular"
+                      class="btn btn--outline btn--lg"
+                    />
+                  )}
+                </div>
               </div>
             </div>
           </div>
